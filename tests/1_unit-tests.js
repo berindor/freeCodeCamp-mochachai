@@ -34,7 +34,7 @@ suite('Unit Tests', function () {
     // #5
     test('#equal, #notEqual', function () {
       assert.equal(12, '12', 'Numbers are coerced into strings with ==');
-      assert.equal({ value: 1 }, { value: 1 }, '== compares object references');
+      assert.notEqual({ value: 1 }, { value: 1 }, '== compares object references');
       assert.equal(6 * '2', '12');
       assert.notEqual(6 + '2', '12');
     });
@@ -43,7 +43,7 @@ suite('Unit Tests', function () {
       assert.notStrictEqual(6, '6');
       assert.strictEqual(6, 3 * 2);
       assert.strictEqual(6 * '2', 12);
-      assert.strictEqual([1, 'a', {}], [1, 'a', {}]);
+      assert.notStrictEqual([1, 'a', {}], [1, 'a', {}]);
     });
     // #7
     test('#deepEqual, #notDeepEqual', function () {
@@ -61,7 +61,7 @@ suite('Unit Tests', function () {
   suite('Comparisons', function () {
     // #8
     test('#isAbove, #isAtMost', function () {
-      assert.fail('hello'.length, 5);
+      assert.isAtMost('hello'.length, 5);
       assert.fail(1, 0);
       assert.fail(Math.PI, 3);
       assert.fail(1 - Math.random(), 1);
