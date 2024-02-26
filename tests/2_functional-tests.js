@@ -67,9 +67,9 @@ suite('Functional Tests', function () {
 });
 
 const Browser = require('zombie');
-//Browser.site = 'https://berindor-fcc-mochachai.onrender.com';
 const port = process.env.PORT || 3000;
-Browser.site = `http://localhost:${port}`;
+Browser.site = `https://berindor-fcc-mochachai.onrender.com:${port}`;
+//Browser.site = `http://localhost:${port}`;
 
 suite('Functional Tests with Zombie.js', function () {
   const browser = new Browser();
